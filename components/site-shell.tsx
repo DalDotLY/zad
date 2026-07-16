@@ -52,7 +52,8 @@ export function Header() {
     <header className={`header ${scrolled ? "header--solid" : "header--top"}`}>
       <div className="container nav">
         <Link href="/" className="brand-link" aria-label="زاد القوافل - الرئيسية">
-          <img src="/type.svg" alt="زاد القوافل" width="776" height="214" />
+          <img className="brand-logo brand-logo--white" src="/brand-horizontal-white.svg" alt="زاد القوافل" width="725" height="151" />
+          <img className="brand-logo brand-logo--color" src="/brand-horizontal.svg" alt="" aria-hidden="true" width="725" height="151" />
         </Link>
         <nav className="desktop-nav" aria-label="التنقل الرئيسي">
           {navigation.map((item) => (
@@ -66,7 +67,7 @@ export function Header() {
       </div>
       <div id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`} aria-hidden={!open}>
         <div className="mobile-menu-head">
-          <img src="/type.svg" alt="زاد القوافل" width="776" height="214"/>
+          <img src="/brand-horizontal-white.svg" alt="زاد القوافل" width="725" height="151"/>
           <button ref={closeButton} className="close-button" onClick={close} aria-label="إغلاق القائمة"><span/><span/></button>
         </div>
         <nav aria-label="التنقل المحمول">
@@ -83,7 +84,7 @@ export function Header() {
 
 export function Footer() {
   return <footer className="footer"><div className="container footer-grid">
-    <div className="footer-intro"><img className="footer-logo" src="/type.svg" alt="زاد القوافل" width="776" height="214"/><p>زاد القوافل شركة ليبية متخصصة في استيراد المواد الغذائية والمواشي واللحوم، وتسعى إلى بناء علاقات توريد موثوقة تخدم احتياجات السوق الليبي.</p><div className="footer-actions"><a className="button" href={site.phoneHref}>اتصل بنا</a><a className="button button--light" href={site.whatsapp}>واتساب</a></div></div>
+    <div className="footer-intro"><img className="footer-logo" src="/brand-horizontal-white.svg" alt="زاد القوافل" width="725" height="151"/><p>زاد القوافل شركة ليبية متخصصة في استيراد المواد الغذائية والمواشي واللحوم، وتسعى إلى بناء علاقات توريد موثوقة تخدم احتياجات السوق الليبي.</p><div className="footer-actions"><a className="button" href={site.phoneHref}>اتصل بنا</a><a className="button button--light" href={site.whatsapp}>واتساب</a></div></div>
     <div><h2>روابط سريعة</h2>{[...navigation,{href:"/privacy",label:"سياسة الخصوصية"}].map(x=><Link key={x.href} href={x.href}>{x.label}</Link>)}</div>
     <div><h2>بيانات التواصل</h2><p>{site.location}</p><a href={site.phoneHref}>{site.phoneLocal}</a><a href={`mailto:${site.emails.info}`}>{site.emails.info}</a><a href={`mailto:${site.emails.partnerships}`}>{site.emails.partnerships}</a><a href={`mailto:${site.emails.suppliers}`}>{site.emails.suppliers}</a></div>
   </div><div className="container footer-bottom"><span>جميع الحقوق محفوظة © زاد القوافل 2026</span><Link href="/privacy">سياسة الخصوصية</Link></div></footer>
