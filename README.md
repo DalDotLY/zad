@@ -25,7 +25,7 @@ pnpm build
 
 الملفات الرسمية موجودة في `public/brand.svg` و`public/Logo.svg` و`public/icon.svg` و`public/type.svg`.
 
-الموقع يعرض بدائل بصرية آمنة حتى تُضاف الصور التالية داخل `public/images`:
+الصور المؤسسية المستخدمة فعليًا موجودة داخل `public/images`:
 
 - `hero-supply.jpg`
 - `warehouse.jpg`

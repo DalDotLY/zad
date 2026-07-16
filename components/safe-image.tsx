@@ -1,10 +1,7 @@
 import Image from "next/image";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 
-export function SafeImage({src,alt,className="",priority=false}: {src:string;alt:string;className?:string;priority?:boolean}) {
-  const exists = existsSync(join(process.cwd(), "public", src.replace(/^\//, "")));
-  return <div className={`safe-image ${className} ${exists ? "has-image" : "image-fallback"}`}>
-    {exists ? <Image src={src} alt={alt} fill priority={priority} sizes="(max-width: 900px) 100vw, 50vw"/> : <><span className="fallback-line"/><img src="/icon.svg" alt="" aria-hidden="true"/></>}
+export function SafeImage({src,alt,className="",priority=false,position="50% 50%"}: {src:string;alt:string;className?:string;priority?:boolean;position?:string}) {
+  return <div className={`safe-image ${className}`}>
+    <Image src={src} alt={alt} fill priority={priority} loading={priority ? "eager" : "lazy"} sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1000px) calc(100vw - 64px), 50vw" style={{objectPosition:position}}/>
   </div>;
 }
