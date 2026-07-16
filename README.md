@@ -23,7 +23,16 @@ pnpm build
 
 ## ملفات الهوية
 
-الملفات الرسمية موجودة في `public/brand.svg` و`public/Logo.svg` و`public/icon.svg` و`public/type.svg`. لا توجد صور فوتوغرافية مرفقة؛ لذلك يعتمد التصميم الحالي على نظام الهوية والخطوط والأشكال التحريرية ويمكن إضافة صور محسنة لاحقًا داخل `public/images`.
+الملفات الرسمية موجودة في `public/brand.svg` و`public/Logo.svg` و`public/icon.svg` و`public/type.svg`.
+
+الموقع يعرض بدائل بصرية آمنة حتى تُضاف الصور التالية داخل `public/images`:
+
+- `hero-supply.jpg`
+- `warehouse.jpg`
+- `food-import.jpg`
+- `livestock.jpg`
+- `meat-import.jpg`
+- `partnerships.jpg`
 
 ## النشر
 

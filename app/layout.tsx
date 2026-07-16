@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Footer, Header, WhatsApp } from "@/components/site-shell";
+import { MotionSystem } from "@/components/motion-system";
 import { site } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({children}:{children:React.ReactNode}) {
  const jsonLd={"@context":"https://schema.org","@type":"Organization",name:site.name,url:site.url,telephone:"+218944300024",email:site.emails.info,address:{"@type":"PostalAddress",addressLocality:"طرابلس",addressCountry:"LY"}};
- return <html lang="ar" dir="rtl"><body><a className="skip-link" href="#main">انتقل إلى المحتوى</a><Header/><main id="main">{children}</main><Footer/><WhatsApp/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/></body></html>
+ return <html lang="ar" dir="rtl"><body><MotionSystem/><a className="skip-link" href="#main">انتقل إلى المحتوى</a><Header/><main id="main">{children}</main><Footer/><WhatsApp/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/></body></html>
 }
