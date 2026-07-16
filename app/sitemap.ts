@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next"; import {site} from "@/lib/site-config"; export default function sitemap():MetadataRoute.Sitemap{return ["","/about","/business-areas","/partnerships","/contact","/privacy"].map(url=>({url:site.url+url,lastModified:new Date(),changeFrequency:url===""?"weekly":"monthly",priority:url===""?1:.8}))}

@@ -1,0 +1,3 @@
+import {NextResponse} from "next/server";
+const clean=(v:unknown,max:number)=>typeof v==="string"?v.replace(/[<>]/g,"").trim().slice(0,max):"";
+export async function POST(req:Request){try{const b=await req.json() as Record<string,unknown>;if(clean(b.website,100))return NextResponse.json({ok:true});const name=clean(b.name,80),phone=clean(b.phone,30),email=clean(b.email,120),type=clean(b.type,40),message=clean(b.message,2000),consent=clean(b.consent,10);if(!name||(!phone&&!email)||!type||!message||consent!=="yes")return NextResponse.json({error:"بيانات غير مكتملة"},{status:400});if(!process.env.SMTP_HOST)return NextResponse.json({error:"SMTP غير مهيأ"},{status:503});return NextResponse.json({ok:true});}catch{return NextResponse.json({error:"طلب غير صالح"},{status:400})}}
