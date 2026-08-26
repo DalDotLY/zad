@@ -13,7 +13,7 @@ const data = [
 ];
 
 export default function Areas(){return <>
-  <PageHero eyebrow="مجالات عملنا" title="مجالات متعددة، ضمن رؤية توريد واحدة." text="تعمل زاد القوافل في ثلاثة مجالات رئيسية، مع مراعاة طبيعة كل نشاط ومتطلبات المنتجات والأسواق المرتبطة به."/>
+  <PageHero eyebrow="مجالات عملنا" title="مجالات متعددة، ضمن رؤية توريد واحدة." text="تعمل زاد القوافل في ثلاثة مجالات رئيسية، مع مراعاة طبيعة كل نشاط ومتطلبات المنتجات والأسواق المرتبطة به." image="/images/food-import.jpg" alt="مواد غذائية مجهزة ضمن عمليات الاستيراد والتوريد"/>
   <section className="section"><div className="container detail-list detail-list--visual">{data.map((item,index)=><article className={index%2 ? "detail-item--reverse" : ""} key={item.number} data-reveal="up"><SafeImage src={item.image} alt={item.alt} className="detail-image"/><div className="detail-copy"><div className="detail-number">{item.number}</div><div><h2>{item.title}</h2><p>{item.text}</p><ul>{item.points.map(point=><li key={point}>{point}</li>)}</ul></div></div></article>)}</div></section>
   <section className="section dark"><div className="container"><SectionTitle title="الالتزام يبدأ من الاختيار." text="نحرص على وضوح المتطلبات، دراسة المصادر، والتواصل المنظم بما يدعم جودة الاختيار واستمرارية العلاقة بين مختلف الأطراف."/></div></section>
   <CTA title="هل تبحث عن فرصة توريد أو تعاون؟" text="تواصل معنا لمناقشة المجال المناسب وطبيعة الاحتياج."><Link className="button" href="/contact">ابدأ التواصل</Link><a className="button button--outline-dark" href={`mailto:${site.emails.suppliers}`}>قسم الموردين</a></CTA>
